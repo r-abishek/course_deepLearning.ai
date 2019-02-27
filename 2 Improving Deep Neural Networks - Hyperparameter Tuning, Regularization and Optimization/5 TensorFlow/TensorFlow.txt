@@ -1,0 +1,61 @@
+GENERIC
+
+tf.constant()
+- a = tf.constant(2)
+- y = tf.constant(39, name = "y")
+- X = tf.constant(np.random.randn(3, 1), name = "X")
+
+tf.Variable()
+- loss = tf.Variable((y - y_hat)**2, name = "loss")
+
+tf.global_variables_initializer()
+- init = tf.global_variables_initializer()
+
+tf.Session()
+- with tf.Session() as sess
+	sess.run(init)
+- with tf.Session() as sess
+	sess.run(init, feed_dict = {x : z})
+
+tf.placeholder()
+- x = tf.placeholder(tf.int64, name = "x")
+
+tf.matmul()
+- tf.matmul(A, B)
+
+tf.add()
+- tf.add(a, b)
+
+tf.ones()
+- tf.ones(shape)
+
+tf.zeros()
+- tf.zeros(shape)
+
+DEEP LEARNING RELATED
+
+tf.nn.sigmoid_cross_entropy_with_logits()
+- tf.nn.sigmoid_cross_entropy_with_logits(logits = , labels = )
+
+tf.one_hot()
+- tf.one_hot(labels, depth, axis)
+
+tf.contrib.layers.xavier_initializer()
+- initializer = tf.contrib.layers.xavier_initializer(seed = 1)
+
+tf.zeros_initializer()
+- initializer = tf.zeros_initializer()
+
+tf.get_variable()
+- W1 = tf.get_variable("W1", [25, 12288], initializer = tf.contrib.layers.xavier_initializer(seed = 1))
+- b1 = tf.get_variable("b1", [25,1], initializer = tf.zeros_initializer())
+
+tf.nn.relu()
+- tf.nn.relu(Z1)
+
+tf.nn.softmax_cross_entropy_with_logits()
+- tf.nn.softmax_cross_entropy_with_logits(logits = , labels = )
+
+tf.reduce_mean()
+- tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = , labels = ))
+
